@@ -100,7 +100,7 @@ module KafkaClusterCookbook
             artifact_name 'kafka'
             artifact_version new_resource.version
             install_path new_resource.install_path
-            remote_url new_resource.binary_url % { version: new_resource.version }
+            remote_url new_resource.binary_url % { version: new_resource.version, scala_version: new_resource.scala_version }
             remote_checksum new_resource.binary_checksum
             only_if { new_resource.install_method == 'binary' }
           end
